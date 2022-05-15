@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfAppPER.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppPER"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="550">
+    <Grid>
+        <StackPanel Grid.Column="1" >
+            <TextBlock Text="Name:" Width="203"/>
+            <TextBox Name ="First" Text="{Binding F_name, UpdateSourceTrigger=PropertyChanged}" MinWidth="40" TextWrapping="Wrap" Width="203" />
+            <TextBlock Text="Last name: :" Width="203"/>
+            <TextBox  x:Name ="Last" Text="{Binding L_name, UpdateSourceTrigger=PropertyChanged}" MinWidth="40" TextWrapping="Wrap" Width="203"/>
+            <TextBlock Text="Email:" Width="203"/>
+            <TextBox x:Name ="Email" Text="{Binding Mylo,  UpdateSourceTrigger=PropertyChanged}" MinWidth="40" TextWrapping="Wrap" Width="203" />
+            <TextBlock Text="Birthday:" Width="203"/>
+            <DatePicker Name ="Date_pic"  SelectedDateFormat="Long"  SelectedDate="{Binding Birthday, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}"  MinWidth="30" Width="203"/>
+            
+            <TextBlock Name ="Data_output" Text="{Binding PersonData, UpdateSourceTrigger=PropertyChanged}" MinWidth="40" TextWrapping="Wrap" Width="203" />
+            
+            <TextBlock Name ="ChSign_output" Text="{Binding ChineseSign, UpdateSourceTrigger=PropertyChanged}" MinWidth="40" TextWrapping="Wrap" Width="203" />
+            <TextBlock Name ="SunSign_output" Text="{Binding SunSign, UpdateSourceTrigger=PropertyChanged}" MinWidth="40" TextWrapping="Wrap" Width="203" />
+
+
+        </StackPanel>
+        <Button Content="Proceed" Command="{Binding Proceed}" RenderTransformOrigin="0.5,0.5" Margin="393,117,27,113"/>
+
+    </Grid>
+</Window>
